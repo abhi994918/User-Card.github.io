@@ -1,4 +1,3 @@
-
 const divEle = document.querySelector(".card-container");
 
 function getUser(url) {
@@ -12,19 +11,19 @@ function getUser(url) {
 
 
 function getDetails(id) {
-  divEle.innerHTML = ""; // Clear previous cards
+  divEle.innerHTML = ""; // Clear existing cards
 
-  getUser(`https://dummyjson.com/users/${id}`)
+  getUser(`https://dummyjson.com/users/${id - 1}`)
     .then((user) => {
-      displayUser(user, "beforeend");
-      return getUser(`https://dummyjson.com/users/${id - 1}`);
+      displayUser(user, "beforeend", "other"); // Previous user
+      return getUser(`https://dummyjson.com/users/${id}`);
     })
     .then((user) => {
-      displayUser(user, "afterbegin", "other");
-      return getUser(`https://dummyjson.com/users/${id - 2}`);
+      displayUser(user, "beforeend"); // Current user
+      return getUser(`https://dummyjson.com/users/${id + 1}`);
     })
     .then((user) => {
-      displayUser(user, "afterbegin", "back");
+      displayUser(user, "beforeend", "back"); // Next user
     })
     .catch((err) => {
       console.error(err);
