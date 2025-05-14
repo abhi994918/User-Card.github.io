@@ -88,6 +88,33 @@
   }
 
 
+.input-container {
+  margin: 20px;
+  text-align: center;
+   
+
+}
+
+#userIdInput {
+  padding: 8px;
+  width: 100px;
+  margin-right: 10px;
+  border-radius: 4px;
+   background: linear-gradient(#71bfff, #f25fff);
+color: whitesmoke;
+}
+
+button {
+  padding: 8px 12px;
+  cursor: pointer;
+   background-color: #4caf50;
+   border-radius: 4px;
+   color: whitesmoke;
+   
+}
+ .input-container button:hover {
+    background-color: #45a049;
+  }
 
 
 
