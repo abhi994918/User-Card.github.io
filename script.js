@@ -23,7 +23,7 @@ function getDetails(id) {
       return getUser(`https://dummyjson.com/users/${id + 1}`);
     })
     .then((user) => {
-      displayUser(user, "beforeend", "back"); // Next user
+      displayUser(user, "beforeend", "other"); // Next user
     })
     .catch((err) => {
       console.error(err);
